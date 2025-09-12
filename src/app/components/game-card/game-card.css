@@ -1,0 +1,248 @@
+
+.game-card {
+  perspective: 1000px;
+  width: 280px; 
+  height: 23em; 
+  position: relative;
+  padding: 0;
+  background-color: #f8f8ff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+.card-face {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  justify-content: space-between;
+  padding: 20px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+}
+
+.card-front {
+  background: #ffffff;
+  transform: rotateY(0deg);
+  border: 2px solid #ffce17;
+}
+
+.game-title {
+  font-weight: 600;
+  font-family: 'MetropolisRegular', sans-serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin: -30px 0;
+  text-align: center;
+}
+
+.game-time {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02rem;
+  color: #212529; 
+  display: block;
+  margin-top: -20px;
+  margin-bottom: 2px;
+}
+
+.game-date {
+  font-size: 14px;
+  color: #555; 
+  font-weight: 600;
+  display: block;
+}
+
+
+
+.card-back {
+  background: #ffffff;
+  transform: rotateY(180deg);
+  padding: 20px 20px 0 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+  border-radius: 10px;
+  border-top: none;  
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden; 
+}
+.card-back .howto-heading {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0px 0;
+  flex-shrink: 0; 
+  text-align: center;
+  width: 100%;
+  padding :0;
+}
+.card-back .back-content {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  max-height: 220px; /* matches original */
+  padding-right: 6px; /* space from scrollbar */
+  
+}
+
+.guide span {
+  display: block;         
+  margin-bottom: 6px;     
+  color: #6c757d;         
+  font-size: 1rem;      
+  line-height: 1.5;
+  text-align: left;       
+}
+
+.card-back .play-now {
+  flex-shrink: 0;
+  margin: 10px -20px -20px;   
+  border-radius: .25rem;
+  position: sticky;
+  bottom: 0;
+}
+
+.card-back .back-content::-webkit-scrollbar {
+  width: 3px;  /* thin */
+}
+.card-back .back-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.card-back .back-content::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+.game-card, .card-face {
+  overflow-x: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.game-card.flipped .card-front {
+  transform: rotateY(180deg);
+}
+.game-card.flipped .card-back {
+  transform: rotateY(360deg);
+}
+
+
+.info-icon img,
+.close-icon{
+  width: 30px;
+  height: 30px;
+}
+
+.info-icon,
+.close-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.info-icon:hover,
+.close-icon:hover {
+  transform: scale(1.15);
+}
+
+
+.game-logo {
+  width: 95px;
+  margin-top: 0px;
+}
+
+
+.game-result {
+  display: flex;
+  justify-content: center ;
+  margin-top: -50px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.game-result span {
+   background: url('/assets/images/whiteball.png') center center / contain no-repeat;
+  height: 38px;
+  width: 38px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  line-height: 38px;
+}
+
+
+.special-icon {
+  width: 28px;
+  height: 28px;
+  margin-left: 6px;
+}
+
+.play-now {
+  display: block;
+  width: calc(100% + 40px); 
+  margin: 0 -20px -20px;    
+  padding: 12px;
+  border: 1px solid transparent;
+  border-radius: .25rem; 
+  font-weight: bold;
+  font-family: inherit;
+  color: #fff;
+  cursor: pointer;
+  transition: color .15s ease-in-out, 
+              background-color .15s ease-in-out, 
+              border-color .15s ease-in-out, 
+              box-shadow .15s ease-in-out;
+}
+
+
+
+.play-now:hover {
+  transform: translateY(-2px);
+}
+
+
+:host-context(.pick4) .play-now {
+  background-color: #ffce17;
+  color: #333;
+}
+
+:host-context(.pick1) .play-now {
+  background: #0a2feb;
+  color: #fff;
+}
+
+:host-context(.pick4) .card-front,
+:host-context(.pick4) .card-back {
+  border: 2px solid #ffce17;
+}
+
+:host-context(.pick1) .card-front,
+:host-context(.pick1) .card-back {
+  border: 2px solid #0a2feb;
+}
+
+.guide {
+  font-size: 0.95rem; 
+  color: grey;
+  text-align: left;
+  padding: 0 5px;
+}
+
+

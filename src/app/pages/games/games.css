@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #f0f8ff;
+}
+app-root {
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0; 
+  background-color: #f0f8ff; 
+}
+.page-wrapper {
+  font-family: 'MetropolisRegular', sans-serif;
+  line-height: 1.5;
+  background-color: #f0f8ff;
+  min-height: 100vh;
+  width: 100%; 
+  display: flex;
+  flex-direction: column;
+}
+
+.games-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px; 
+  overflow-x: hidden;
+}
+
+.games-container app-game-card {
+  margin: 0 20px;   
+  display: block;
+  flex: 0 0 auto;
+}
+
+.page-heading {
+  padding-top: 1rem;
+  text-align: center;       
+  font-weight: 700;
+  font-size: 4ch;           
+  -webkit-text-stroke-width: thin;
+  font-family: 'MetropolisRegular', sans-serif;
+  color: #212529;
+  line-height: 1.5;
+}

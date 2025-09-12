@@ -1,0 +1,24 @@
+<div class="page-wrapper">
+<h2 class="page-heading">GAMES</h2>
+
+<div class="games-container">
+  <app-game-card
+  *ngFor="let game of games"
+  [ngClass]="game.gameName.toLowerCase()"
+  [game]="game"
+  [logo]="game.gameName === 'PICK4' 
+            ? 'assets/images/pick/pick4-game.png' 
+            : 'assets/images/pick/pick1-game.png'"
+  [specialIcons]="game.gameName === 'PICK1' 
+            ? ['assets/images/common/goldenBall.png', 'assets/images/common/fire.png'] 
+            : []"
+  [infoIcon]="game.gameName === 'PICK4' 
+            ? 'assets/images/icons/info-dark-blue.svg' 
+            : 'assets/images/icons/info-light-green.svg'"
+  [backCloseIcon]="game.gameName === 'PICK4' 
+            ? 'assets/images/icons/close-dark-blue.svg' 
+            : 'assets/images/icons/close-light-green.svg'">
+</app-game-card>
+
+</div>
+</div>
