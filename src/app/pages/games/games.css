@@ -25,6 +25,7 @@ app-root {
   width: 100%; 
   display: flex;
   flex-direction: column;
+  margin-top: 60px;
 }
 
 .games-container {
@@ -45,10 +46,15 @@ app-root {
 .page-heading {
   padding-top: 1rem;
   text-align: center;       
-  font-weight: 700;
+  
   font-size: 4ch;           
-  -webkit-text-stroke-width: thin;
-  font-family: 'MetropolisRegular', sans-serif;
+  /* -webkit-text-stroke-width: thin; */
+  /* font-family: 'MetropolisRegular', sans-serif; */
+  /* font-family: MetropolisRegular !important; */
   color: #212529;
   line-height: 1.5;
+  /* --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; */
+   font-family: sans-serif;
+   font-weight: 800 !important;
 }

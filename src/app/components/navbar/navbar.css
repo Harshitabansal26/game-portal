@@ -1,0 +1,154 @@
+.header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  background: transparent; 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  background-color: #ffffff;
+  border-bottom: 3px solid #0a2feb;
+ height: 60px;
+ z-index: 102;
+  padding: 4px 8px;
+  height: 50px;
+  min-height: 50px;
+}
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* nav ke bilkul niche open hoga */
+  left: 0;
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  margin: 0;
+  list-style: none;
+  border-radius: 6px;
+  min-width: 150px;
+  z-index: 2000;
+}
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+.dropdown-menu li a {
+  display: block;
+  padding: 6px 12px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar-right{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.wallet-box {
+  width: calc(12% - 10px);
+  background: linear-gradient(.25turn, #0136ff, #7933a7);
+  margin-left: 10px; 
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 600;
+  height: auto;
+  min-height: auto;
+}
+
+.wallet-box img {
+  max-height: 28px; /* navbar ke andar fit hoga */
+  height: auto;
+  width: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #656565;
+  font-weight: 500;
+  padding: 4px 6px;
+}
+.nav-links li img {
+  width: 16px;
+  height: 16px;
+}
+
+.nav-links li a.active {
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* Logout button */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  color: #656565;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+  font-size: 1rem;       
+  line-height: 1.5;      
+  padding: 4px 6px;
+}
+
+.logout-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Add space for fixed header */
+body {
+  padding-top: 80px;
+  background-color: #f9fafb; /* your page bg */
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+}

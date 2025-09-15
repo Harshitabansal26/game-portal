@@ -1,4 +1,5 @@
 <div class="game-card" [class.flipped]="flipped">
+  
   <!-- FRONT -->
   <div class="card-face card-front">
     <div class="info-icon" (click)="toggleFlip()">
@@ -12,6 +13,7 @@
       <span class="game-time">{{ game.gameDateTime | date:'hh:mm a' }}</span>
       <span class="game-date">{{ game.gameDateTime | date:'dd/MM/yyyy' }}</span>
     </p>
+
     <ng-template #rawDate>
       <p class="game-datetime">
         <span class="game-time">{{ game?.gameTime || '—' }}</span>
@@ -19,10 +21,12 @@
       </p>
     </ng-template>
 
+    <!-- PICK4 Result -->
     <div class="game-result" *ngIf="game?.gameName === 'PICK4'">
       <span *ngFor="let n of game?.gameResult">{{ n }}</span>
     </div>
 
+    <!-- PICK1 Result -->
     <div class="game-result" *ngIf="game?.gameName === 'PICK1'">
       <span>{{ game?.gameResult }}</span>
       <img class="special-icon" *ngFor="let icon of specialIcons" [src]="icon" alt="special" />
@@ -34,16 +38,16 @@
   <!-- BACK -->
   <div class="card-face card-back">
     <div class="close-icon" *ngIf="backCloseIcon" (click)="toggleFlip()">
-  <img [src]="backCloseIcon" alt="close" />
-</div>
+      <img [src]="backCloseIcon" alt="close" />
+    </div>
 
-    <!-- ADDED: show game name on back like original -->
     <h3 class="game-title back-title">{{ game?.gameName }}</h3>
     <h4 class="howto-heading">How to Play</h4>
 
     <div class="back-content">      
       <div class="guide">
         <span *ngFor="let line of game?.howToPlayLines">{{ line }}.</span>
+         <!-- <div *ngFor="let line of game?.howToPlayLines">{{ line }}</div> -->
       </div>
     </div>
 

@@ -1,0 +1,44 @@
+<!-- header-wrapper keeps everything fixed on top -->
+<div class="header-wrapper">
+  <div class="header-container">
+    <!-- Navbar (left section) -->
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a routerLink="/home" routerLinkActive="active" >Home</a></li>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">All Games</a></li>
+        <li class="dropdown" (click)="toggleDropdown()" [class.open]="isDropdownOpen">
+          <a href="javascript:void(0)">Games ▾</a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/pick4">Pick 4</a></li>
+            <li><a routerLink="/pick1">Pick 1</a></li>
+          </ul>
+        </li>
+
+        <li><a routerLink="/account">Account Management</a></li>
+        <li><a routerLink="/winning-numbers">Winning Numbers</a></li>
+        <li><a routerLink="/bet-history">Bet History</a></li>
+        <li><a routerLink="/transaction">Transaction</a></li>
+        <li><a routerLink="/refer">Refer & Earn</a></li>
+        <li><a routerLink="/referral-program">Referral Program</a></li>
+        <li><a routerLink="/help">Help</a></li>
+        <li><a routerLink="/lucky-markers">Lucky Markers</a>
+          <img src="assets\images\icons\no-unread-notification.svg" alt="bell" />
+        </li>
+      </ul>
+
+      <div class="navbar-right">
+        <button class="logout-btn">
+          Logout
+          <img src="assets/images/icons/logout.png" alt="logout" /> 
+        </button>
+      </div>
+    </nav>
+
+    <!-- Wallet box (right section) -->
+    <div class="wallet-box">
+      
+      <img src="assets/images/icons/dollar.png" alt="wallet" />
+      <span class="balance">0.00</span>
+    </div>
+  </div>
+</div>

@@ -34,9 +34,10 @@ export class Games implements OnInit {
           let howToPlayLines: string[] = [];
           if (g.howToPlay) {
             howToPlayLines = g.howToPlay
-              .split('. ')
+              .split(/(?<!\d)\.(?:\s+|$)/g)
               .map((line: string) => line.trim())
               .filter((line: string) => line.length > 0);
+              console.log('howToPlayLines:', howToPlayLines);
           }
 
             return { ...g, gameDateTime, howToPlayLines };

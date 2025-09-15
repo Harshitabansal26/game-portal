@@ -1,15 +1,14 @@
-
 .game-card {
   perspective: 1000px;
-  width: 280px; 
-  height: 23em; 
+  width: 280px;
+  height: 23em;
   position: relative;
   padding: 0;
   background-color: #f8f8ff;
   border-radius: 10px;
   overflow: hidden;
+  transform-style: preserve-3d;
 }
-
 
 .card-face {
   width: 100%;
@@ -23,11 +22,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
   justify-content: space-between;
   padding: 20px;
   transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(.175, .885, .32, 1.275);
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -49,11 +47,20 @@
   text-align: center;
 }
 
+.back-title {
+  margin-top: 0px;
+  margin-bottom: -10px;
+  font-size: 30px;
+  font-weight: bolder;
+  font-family: 'MetropolisRegular', sans-serif;
+  color: #212529;
+}
+
 .game-time {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.02rem;
-  color: #212529; 
+  color: #212529;
   display: block;
   margin-top: -20px;
   margin-bottom: 2px;
@@ -61,63 +68,63 @@
 
 .game-date {
   font-size: 14px;
-  color: #555; 
+  color: #555;
   font-weight: 600;
   display: block;
 }
 
-
-
 .card-back {
   background: #ffffff;
   transform: rotateY(180deg);
-  padding: 20px 20px 0 20px;
+  padding: 10px 20px 0 20px;
   font-size: 1rem;
   line-height: 1.6;
   border-radius: 10px;
-  border-top: none;  
+  border-top: none;
   display: flex;
   flex-direction: column;
   height: 100%;
-  overflow: hidden; 
+  overflow: hidden;
 }
+
 .card-back .howto-heading {
   font-weight: 700;
   font-size: 1.1rem;
   margin: 0px 0;
-  flex-shrink: 0; 
+  flex-shrink: 0;
   text-align: center;
   width: 100%;
-  padding :0;
+  padding: 0;
 }
+
 .card-back .back-content {
   flex: 1 1 auto;
   overflow-y: auto;
-  max-height: 220px; /* matches original */
-  padding-right: 6px; /* space from scrollbar */
-  
+  max-height: 220px;
+  padding-right: 6px;
 }
 
 .guide span {
-  display: block;         
-  margin-bottom: 6px;     
-  color: #6c757d;         
-  font-size: 1rem;      
+  display: block;
+  margin-bottom: 6px;
+  color: #6c757d;
+  font-size: 1rem;
   line-height: 1.5;
-  text-align: left;       
+  text-align: left;
 }
 
 .card-back .play-now {
   flex-shrink: 0;
-  margin: 10px -20px -20px;   
+  margin: 10px -20px -20px;
   border-radius: .25rem;
   position: sticky;
   bottom: 0;
 }
 
 .card-back .back-content::-webkit-scrollbar {
-  width: 3px;  /* thin */
+  width: 3px;
 }
+
 .card-back .back-content::-webkit-scrollbar-track {
   background: transparent;
 }
@@ -126,22 +133,25 @@
   background: #ccc;
   border-radius: 4px;
 }
-.game-card, .card-face {
+
+.game-card,
+.card-face {
   overflow-x: hidden;
   max-width: 100%;
   box-sizing: border-box;
 }
 
+/* ✅ FIXED FLIP BEHAVIOR */
 .game-card.flipped .card-front {
   transform: rotateY(180deg);
 }
+
 .game-card.flipped .card-back {
   transform: rotateY(360deg);
 }
 
-
 .info-icon img,
-.close-icon{
+.close-icon {
   width: 30px;
   height: 30px;
 }
@@ -160,16 +170,14 @@
   transform: scale(1.15);
 }
 
-
 .game-logo {
   width: 95px;
   margin-top: 0px;
 }
 
-
 .game-result {
   display: flex;
-  justify-content: center ;
+  justify-content: center;
   margin-top: -50px;
   align-items: center;
   flex-wrap: wrap;
@@ -177,7 +185,7 @@
 }
 
 .game-result span {
-   background: url('/assets/images/whiteball.png') center center / contain no-repeat;
+  background: url('/assets/images/whiteball.png') center center / contain no-repeat;
   height: 38px;
   width: 38px;
   font-size: 16px;
@@ -187,7 +195,6 @@
   line-height: 38px;
 }
 
-
 .special-icon {
   width: 28px;
   height: 28px;
@@ -196,27 +203,21 @@
 
 .play-now {
   display: block;
-  width: calc(100% + 40px); 
-  margin: 0 -20px -20px;    
+  width: calc(100% + 40px);
+  margin: 0 -20px -20px;
   padding: 12px;
   border: 1px solid transparent;
-  border-radius: .25rem; 
+  border-radius: .25rem;
   font-weight: bold;
   font-family: inherit;
   color: #fff;
   cursor: pointer;
-  transition: color .15s ease-in-out, 
-              background-color .15s ease-in-out, 
-              border-color .15s ease-in-out, 
-              box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
-
-
 
 .play-now:hover {
   transform: translateY(-2px);
 }
-
 
 :host-context(.pick4) .play-now {
   background-color: #ffce17;
@@ -239,10 +240,32 @@
 }
 
 .guide {
-  font-size: 0.95rem; 
+  font-size: 0.95rem;
   color: grey;
   text-align: left;
   padding: 0 5px;
 }
 
+@keyframes flipFront {
+  0% { transform: rotateY(0deg); }
+  60% { transform: rotateY(200deg); }
+  100% { transform: rotateY(180deg); }
+}
 
+@keyframes flipBack {
+  0% { transform: rotateY(180deg); }
+  60% { transform: rotateY(380deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+@keyframes flipFrontReverse {
+  0% { transform: rotateY(180deg); }
+  60% { transform: rotateY(-20deg); }
+  100% { transform: rotateY(0deg); }
+}
+
+@keyframes flipBackReverse {
+  0% { transform: rotateY(360deg); }
+  60% { transform: rotateY(160deg); }
+  100% { transform: rotateY(180deg); }
+}
