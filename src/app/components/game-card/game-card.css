@@ -8,6 +8,7 @@
   border-radius: 10px;
   overflow: hidden;
   transform-style: preserve-3d;
+  border: 2px solid transparent;
 }
 
 .card-face {
@@ -39,7 +40,7 @@
 }
 
 .game-title {
-  font-weight: 600;
+  font-weight: 550;
   font-family: 'MetropolisRegular', sans-serif;
   font-size: 1.8rem;
   text-transform: uppercase;

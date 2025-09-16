@@ -6,13 +6,15 @@ import { App } from './app';
 import { Games } from './pages/games/games';
 import { GameCard } from './components/game-card/game-card';
 import { Navbar } from './components/navbar/navbar';
+import { Footer } from './components/footer/footer';
 
 @NgModule({
   declarations: [
     App,
     Games,
     GameCard,
-    Navbar
+    Navbar,
+    Footer
   ],
   imports: [
     BrowserModule,
